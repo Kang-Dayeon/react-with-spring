@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { createSearchParams, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 const ReadPage = () => {
@@ -13,19 +13,19 @@ const ReadPage = () => {
 
   const queryStr = createSearchParams({page,size}).toString()
 
-  const moveToModify = (tno) => {
-    navigate({
-      pathname:`todo/modify/${tno}`,
-      search: queryStr
-    })
-  }
+  const moveToModify = useCallback((tno) => {
 
-  const moveToList = () => {
     navigate({
-      pathname:`todo/list`,
+      pathname: `/todo/modify/${tno}`,
       search: queryStr
     })
-  }
+
+  },[tno, page, size])
+
+  const moveToList = useCallback(() => {
+
+    navigate({pathname:`/todo/list`, search: queryStr})
+  }, [page, size])
 
   return (
     <div className='text-3xl'>
