@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+// db에 있는 칼럼 정보를 객체로 정의하여 사용
 @Entity
 @ToString
 @Getter
