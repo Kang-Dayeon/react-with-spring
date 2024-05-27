@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TodoDTO {
-
+    // key와 value가 정해져 있지만 받아야할 파라미터가 많은 경우 DTO객체를 사용
     private Long tno;
 
     private String title;
