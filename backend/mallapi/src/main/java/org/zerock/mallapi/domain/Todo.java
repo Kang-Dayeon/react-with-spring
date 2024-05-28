@@ -6,7 +6,7 @@ import lombok.*;
 import java.time.LocalDate;
 
 // db에 있는 칼럼 정보를 객체로 정의하여 사용
-@Entity
+@Entity // 실제 db와 맵핑되는 클래스, 데이터 전달에 사용되면 안된다
 @ToString
 @Getter
 @Builder

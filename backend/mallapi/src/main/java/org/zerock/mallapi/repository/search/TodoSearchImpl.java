@@ -10,6 +10,7 @@ import org.zerock.mallapi.dto.PageRequestDTO;
 
 import java.util.List;
 
+// DAO를 상속받는 실체 로직 클래스
 @Log4j2
 public class TodoSearchImpl extends QuerydslRepositorySupport implements TodoSearch {
 
