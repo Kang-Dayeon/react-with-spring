@@ -20,6 +20,7 @@ public class TodoController {
     // get 형식의 요청에서 쿼리 문자열을 전달하기 위해 사용되는 방법
     @GetMapping("/{tno}")
     public TodoDTO get(@PathVariable("tno") Long tno){ // 어떤 요청 값이 들어올지 모를 경우 사용
+        // todoService에 있는 get을 사용해서 리턴해줌
         return todoService.get(tno);
     }
 

@@ -18,6 +18,7 @@ public interface TodoService {
 
     PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO);
 
+    // Entity 객체를 TodoDTO 객체로 리턴하는 함수
     default TodoDTO entityToDTO(Todo todo){
         return TodoDTO.builder()
                         .tno(todo.getTno())
@@ -28,6 +29,7 @@ public interface TodoService {
                         .build();
     }
 
+    // DTO 객체를 Entity 객체로 리턴하는 함수
     default Todo dtoToEntity(TodoDTO todoDTO){
         return Todo.builder()
                 .tno(todoDTO.getTno())
