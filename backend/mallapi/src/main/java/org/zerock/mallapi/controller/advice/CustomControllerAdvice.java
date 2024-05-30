@@ -11,8 +11,10 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 // 에러 상화에 대한 예외처리
-@RestControllerAdvice
+@RestControllerAdvice // json 형태로 결과를 반환해주는 어노테이션
 public class CustomControllerAdvice {
+    // 예외 상황이 발생하면 해당 메소드로 처리하겠다는 어노테이션
+    // 괄호 안에는 어떤 exceptionClass를 처리할지 설정하는것
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<?> notExist(NoSuchElementException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("msg", e.getMessage()));
