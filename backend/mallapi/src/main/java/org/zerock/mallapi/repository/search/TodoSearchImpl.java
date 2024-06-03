@@ -10,12 +10,13 @@ import org.zerock.mallapi.dto.PageRequestDTO;
 
 import java.util.List;
 
-// DAO를 상속받는 실체 로직 클래스
+// 동적 쿼리 생성을 위해 querydsl을 사용하는데, interface만들어주고 그걸 상속받아서 활용하는 impl을 만들어줘야함
 @Log4j2
 public class TodoSearchImpl extends QuerydslRepositorySupport implements TodoSearch {
 
+    // 생성자
     public TodoSearchImpl() {
-        super(Todo.class);
+        super(Todo.class); // 도메인 class 지정
     }
 
     @Override
