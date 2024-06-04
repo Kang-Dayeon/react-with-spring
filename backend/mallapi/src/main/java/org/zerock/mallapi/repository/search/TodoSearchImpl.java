@@ -24,6 +24,7 @@ public class TodoSearchImpl extends QuerydslRepositorySupport implements TodoSea
 
         log.info("search1........................");
 
+        // 쿼리를 날리기 위한 객체
         QTodo todo = QTodo.todo;
 
         JPQLQuery<Todo> query = from(todo);
